@@ -1,0 +1,135 @@
+INDEX VERSION 1.134
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\950376250.index
+\LPI_Sesion_02\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1799343294.index
+\LPI_Sesion_01\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1050331237.index
+\LPI_Sesion_05\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3421419230.index
+\LPI_Sesion_03\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\657322058.index
+\LPI_Proyecto_Final_v2\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3506082375.index
+\LPI_Proyecto_Final_v2\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2393348661.index
+\LPI_Sesion_03\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3182611653.index
+\LPI_Sesion_08\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2393348661.index
+\LPI_Sesion_03\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1009707716.index
+\LPI_Sesion_10\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2677088306.index
+\LPI_Sesion_04\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1363325369.index
+\LPI_Proyecto_Final_v2\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3176607344.index
+\LPI_Sesion_04\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\951829288.index
+\LPI_Proyecto_Final_3\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1363797339.index
+\LPI_Sesion_08\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3930212282.index
+\LPI_Sesion_04\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\406317937.index
+\LPI_Sesion_05\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1801921181.index
+\LPI_Sesion_05\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\740541938.index
+\Toreto\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1801921181.index
+\LPI_Sesion_05\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2892466766.index
+\LPI_Proyecto_Final_3\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1799343294.index
+\LPI_Sesion_01\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\207790383.index
+\Toreto\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4080319650.index
+\LPI_ES_MONTERO_VILCAS\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\665192250.index
+\LPI_Sesion_09\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3930212282.index
+\LPI_Sesion_04\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3156507245.index
+\LPI_ES_MONTERO_VILCAS\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2677088306.index
+\LPI_Sesion_04\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2529287661.index
+\LPI_Sesion_10\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3421419230.index
+\LPI_Sesion_03\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1414710156.index
+\LPI_Sesion_10\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3496771708.index
+\LPI_Sesion_09\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2368701216.index
+\LPI_Sesion_09\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3176607344.index
+\LPI_Sesion_04\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\406317937.index
+\LPI_Sesion_05\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1938628974.index
+\LPI_Proyecto_Final_v2\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\176769123.index
+\LPI_Sesion_08\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1228644884.index
+\LPI_Sesion_10\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\650192401.index
+\LPI_Sesion_09\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1050331237.index
+\LPI_Sesion_05\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\651119083.index
+\LPI_Sesion_10\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3217009986.index
+\LPI_Sesion_04\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4004421864.index
+\LPI_Proyecto_Final_v2\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\404743566.index
+\GestionAlmacen\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\624347794.index
+\LPI_Proyecto_Final_3\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4166809795.index
+\LPI_Sesion_09\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1574430925.index
+\LPI_Sesion_08\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3036273137.index
+\LPI_ES_MONTERO_VILCAS\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4167725761.index
+\LPI_ES_MONTERO_VILCAS\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\78909347.index
+\LPI_Sesion_08\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\854224152.index
+\GestionAlmacen\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4257163835.index
+\LPI_Proyecto_Final_v2\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2879665315.index
+\LPI_Proyecto_Final_3\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3217009986.index
+\LPI_Sesion_04\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3538004127.index
+\LPI_Proyecto_Final_3\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\639943844.index
+\LPI_Sesion_05\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2873287609.index
+\GestionAlmacen\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2733741876.index
+\LPI_ES_MONTERO_VILCAS\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1632267160.index
+\LPI_Sesion_09\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3956295620.index
+\LPI_ES_MONTERO_VILCAS\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\63680796.index
+\LPI_Sesion_10\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\950376250.index
+\LPI_Sesion_02\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3933355070.index
+\LPI_Proyecto_Final_3\src\main\java
+C:\Users\jmontero\OneDrive - CIBERTEC\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\639943844.index
+\LPI_Sesion_05\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\85387264.index
+\Toreto\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1512792141.index
+\LPI_Proyecto_Final_v2\src\main\java
+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\758260415.index
+\LPI_Proyecto_Final_3\src\main\java

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="entidades.Curso"/>
+    <fullyQualifiedTypeName name="entidades.Docente"/>
+    <fullyQualifiedTypeName name="dao.mysql.DocenteDao"/>
+    <fullyQualifiedTypeName name="fabrica.DAOFactory"/>
+    <fullyQualifiedTypeName name="interfaces.ICursoDAO"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="interfaces.IDocenteDAO"/>
+    <fullyQualifiedTypeName name="dao.mysql.CursoDAO"/>
+    <fullyQualifiedTypeName name="dao.mysql.DocenteDAO"/>
+    <fullyQualifiedTypeName name="fabrica.OracleDAOFactory"/>
+    <fullyQualifiedTypeName name="db.MySqlConexion"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+    <fullyQualifiedTypeName name="dao.mysql.ProductoDAO"/>
+    <fullyQualifiedTypeName name="entidades.Proveedor"/>
+    <fullyQualifiedTypeName name="fabrica.MySqlDAOFactory"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpClient"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+</qualifiedTypeNameHistroy>

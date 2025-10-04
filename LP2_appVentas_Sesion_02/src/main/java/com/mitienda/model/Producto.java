@@ -1,0 +1,63 @@
+package com.mitienda.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "productos")
+public class Producto {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idProductos")
+	private int idProductos;
+	
+	@Column(name = "nombreProducto")
+	private String nombre;
+	
+	@Column(name = "precioProducto")
+	private double precio;
+
+	public Producto() {
+	}
+
+	public Producto(int idProducto, String nombre, double precio, int stock) {
+		this.idProductos = idProducto;
+		this.nombre = nombre;
+		this.precio = precio;
+	}
+
+	public int getIdProducto() {
+		return idProductos;
+	}
+
+	public void setIdProducto(int idProducto) {
+		this.idProductos = idProducto;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
+	@Override
+	public String toString() {
+		return "Producto [idProducto=" + idProductos + ", nombre=" + nombre + ", precio=" + precio + "]";
+	}
+	
+
+}

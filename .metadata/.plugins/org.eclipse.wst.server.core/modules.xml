@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:LPI_Sesion_04" serverId="Tomcat v11.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:LPI_Sesion_03" serverId="Tomcat v11.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:LPI_Sesion_02" serverId="Tomcat v11.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:LPI_Proyecto_Final_v2" serverId="Tomcat v11.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:LPI_Sesion_08" serverId="Tomcat v11.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:LPI_Sesion_09" serverId="Tomcat v11.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:LPI_Proyecto_Final_3" serverId="Tomcat v11.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:LPI_Sesion_05" serverId="Tomcat v11.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:LPI_Sesion_10" serverId="Tomcat v11.0 Server at localhost"/>
+</modules>

@@ -1,0 +1,19 @@
+INDEX VERSION 1.4+C:\Users\chino\OneDrive - CIBERTEC (1)\ESTUDIO\Cibertec - COMPUTACION E INFORMATICA\CICLO 3\MODULO 2\Lenguaje de Programacion I\Ejercicios\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+10641733.index
+1857970322.index
+3841336719.index
+121150069.index
+3859061104.index
+1617291424.index
+3701149873.index
+2159018430.index
+1775477899.index
+1628254157.index
+4155978024.index
+3082008676.index
+3408177641.index
+517248029.index
+392353846.index
+1730603959.index
+3666361511.index
+3166326362.index

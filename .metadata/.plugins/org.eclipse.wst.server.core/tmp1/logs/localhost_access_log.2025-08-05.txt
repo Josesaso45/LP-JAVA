@@ -1,0 +1,4 @@
+127.0.0.1 - - [05/Aug/2025:14:18:28 -0500] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [05/Aug/2025:14:21:01 -0500] "GET /LPI_Sesion_03/curso/curso_editar.jsp HTTP/1.1" 200 1514
+0:0:0:0:0:0:0:1 - - [05/Aug/2025:14:25:23 -0500] "GET /LPI_Sesion_03/curso/curso_editar.jsp HTTP/1.1" 200 1514
+0:0:0:0:0:0:0:1 - - [05/Aug/2025:14:26:16 -0500] "POST /LPI_Sesion_03/curso/curso?opcion=registrar HTTP/1.1" 404 720

@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<%
+		String[] codigos = {"123","456","789"};
+		String[] nombres = {"Jose","Geanfranco","Candelaria"};
+		int[]	 edades		 = {24,23,68};
+	%>
+	
+	<table width="100%" cellspacing=0 cellsborder=0 border="1">
+		<thead>
+			<tr>
+				<th>Codigo</th>
+				<th>Nombre</th>
+				<th>Edad</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<%for(int i =0; i < codigos.length;i++){ %>
+			<tr>
+				<td><%codigos[0] %></td>
+				<td><%nombres[0] %></td>
+				<td><%edades[0] %></td>
+			</tr>
+			<%} %>
+		</tbody>
+	</table>
+</body>
+</html>

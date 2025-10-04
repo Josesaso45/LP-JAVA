@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<table width="100%" cellspacing=0 cellsborder=0 border="1">
+		<thead>
+			<tr>
+				<th>Codigo</th>
+				<th>Nombre</th>
+				<th>Edad</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td>123</td>
+				<td>Jose</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>124</td>
+				<td>Geanfranco</td>
+				<td>23</td>
+			</tr>
+			<tr>
+				<td>125</td>
+				<td>Candelaria</td>
+				<td>58</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

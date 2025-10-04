@@ -1,0 +1,15 @@
+package com.micolegio.app;
+
+public class AppEstudiante {
+	public static void main(String[] args) {
+		System.out.println("Registro de Estudiante");
+		
+		System.out.println("\n-- CRUD ESTUDIANTE --");
+		System.out.println("Crear Estudiante");
+		System.out.println("Leer Estudiante");
+		System.out.println("Actualizar Estudiante");
+		System.out.println("Eliminar Estudiante");	
+		System.out.println("Salir");
+		System.out.println("Elija una opcion: ");
+	}
+}

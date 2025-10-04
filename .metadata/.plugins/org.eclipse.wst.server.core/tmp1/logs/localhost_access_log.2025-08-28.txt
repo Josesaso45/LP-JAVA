@@ -1,0 +1,8 @@
+127.0.0.1 - - [28/Aug/2025:19:35:36 -0500] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [28/Aug/2025:19:35:42 -0500] "GET /LPI_Proyecto_Final_v2/autenticacion HTTP/1.1" 200 1451
+0:0:0:0:0:0:0:1 - - [28/Aug/2025:19:35:44 -0500] "GET /favicon.ico HTTP/1.1" 404 698
+0:0:0:0:0:0:0:1 - - [28/Aug/2025:19:36:16 -0500] "POST /LPI_Proyecto_Final_v2/autenticacion?opcion=autenticar HTTP/1.1" 500 1460
+0:0:0:0:0:0:0:1 - - [28/Aug/2025:22:09:01 -0500] "GET /LPI_Proyecto_Final_v2/producto HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [28/Aug/2025:22:09:02 -0500] "GET /LPI_Proyecto_Final_v2/autenticacion HTTP/1.1" 200 1451
+0:0:0:0:0:0:0:1 - - [28/Aug/2025:22:09:25 -0500] "POST /LPI_Proyecto_Final_v2/autenticacion?opcion=autenticar HTTP/1.1" 500 1460
+0:0:0:0:0:0:0:1 - - [28/Aug/2025:22:09:38 -0500] "POST /LPI_Proyecto_Final_v2/autenticacion?opcion=autenticar HTTP/1.1" 500 1460

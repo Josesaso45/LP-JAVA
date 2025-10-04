@@ -1,0 +1,76 @@
+package com.micolegio.app;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+import com.micolegio.model.Estudiante;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+public class AppEstudiante {
+	public static void main(String[] args) {
+		System.out.println("Registro de Estudiante");
+		
+		int opcion = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("\n-- CRUD ESTUDIANTE --");
+		System.out.println("Crear Estudiante");
+		System.out.println("Buscar Estudiante");
+		System.out.println("Actualizar Estudiante");
+		System.out.println("Eliminar Estudiante");	
+		System.out.println("Salir");
+		System.out.println("Elija una opcion: ");
+		
+		opcion = sc.nextInt();
+		sc.nextLine();
+		
+		switch (opcion) {
+		case 1:
+			//Crear Persistencia de Estudiante
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("LP2_appMiColegio_Sesion_04PU");
+			EntityManager em = emf.createEntityManager();
+			
+			//Crear Objeto Estudiante
+			Estudiante objEst1 = new Estudiante();
+			
+			System.out.println("Digite su nombre: ");
+			objEst1.setNombre(sc.nextLine());
+			
+			System.out.println("Digite su apellido: ");
+			objEst1.setApellido(sc.nextLine());
+			
+			System.out.println("Digite su email: ");
+			objEst1.setEmail(sc.nextLine());
+			
+			System.out.println("Digite su fecha de nacimiento (YYYY-MM-DD): ");
+			objEst1.setFechaNacimiento(LocalDate.parse(sc.nextLine()));
+			
+			//Ejecucion 
+			em.getTransaction().begin();
+			em.persist(objEst1);
+			em.getTransaction().commit();
+			
+			//Cerrar Persistencia
+			System.out.println("Estudiante registrado con exito");
+			break;
+		case 2:
+			System.out.println("Rutina Buscar Estudiante");
+			break;
+		case 3:
+			System.out.println("Rutina Actualizar Estudiante");
+			break;
+		case 4:
+			System.out.println("Rutina Eliminar Estudiante");
+			break;
+		case 5:
+			System.out.println("Salir");
+			break;
+		default:
+			System.out.println("Opcion no valida");
+			break;
+		}
+	}
+}

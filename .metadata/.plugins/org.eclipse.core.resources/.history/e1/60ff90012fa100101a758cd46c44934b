@@ -1,0 +1,5 @@
+package com.mitienda.model;
+
+public class Producto {
+
+}
