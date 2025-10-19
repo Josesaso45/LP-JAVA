@@ -24,14 +24,14 @@ public class AppEstudiante {
 		System.out.println("Salir");
 		System.out.println("Elija una opcion: ");
 		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("LP2_appMiColegio_Sesion_04PU");
+		EntityManager em = emf.createEntityManager();
+		
 		opcion = sc.nextInt();
 		sc.nextLine();
 		
 		switch (opcion) {
 		case 1:
-			//Crear Persistencia de Estudiante
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("LP2_appMiColegio_Sesion_04PU");
-			EntityManager em = emf.createEntityManager();
 			
 			//Crear Objeto Estudiante
 			Estudiante objEst1 = new Estudiante();
@@ -64,31 +64,9 @@ public class AppEstudiante {
 			break;
 		case 4:
 			//Crear Persistencia de Estudiante
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("LP2_appMiColegio_Sesion_04PU");
-			EntityManager em = emf.createEntityManager();
 			
-			//Crear Objeto Estudiante
-			Estudiante objEst1 = new Estudiante();
 			
-			System.out.println("Digite su nombre: ");
-			objEst1.setNombre(sc.nextLine());
-			
-			System.out.println("Digite su apellido: ");
-			objEst1.setApellido(sc.nextLine());
-			
-			System.out.println("Digite su email: ");
-			objEst1.setEmail(sc.nextLine());
-			
-			System.out.println("Digite su fecha de nacimiento (YYYY-MM-DD): ");
-			objEst1.setFechaNacimiento(LocalDate.parse(sc.nextLine()));
-			
-			//Ejecucion 
-			em.getTransaction().begin();
-			em.persist(objEst1);
-			em.getTransaction().commit();
-			
-			//Cerrar Persistencia
-			System.out.println("Estudiante eliminado con exito");			break;
+			break;
 		case 5:
 			System.out.println("Salir");
 			break;

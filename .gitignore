@@ -1,0 +1,18 @@
+# Ignorar archivos de IDE (Eclipse/VSCode)
+.metadata/
+.settings/
+.classpath
+.project
+.vscode/
+
+# Ignorar logs
+*.log
+tmp/
+
+# Ignorar archivos compilados de Java/Maven
+target/
+bin/
+*.class
+*.jar
+*.war
+*.ear

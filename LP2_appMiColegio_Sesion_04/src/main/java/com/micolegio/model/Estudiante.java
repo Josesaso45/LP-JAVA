@@ -15,7 +15,7 @@ public class Estudiante {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "idEstudiante")
 	private int id;
 	
 	@Column(name = "nombreEstudiante", length = 100, nullable = false)
@@ -27,7 +27,7 @@ public class Estudiante {
 	@Column(name = "emailEstudiante", length = 100, nullable = false, unique = true)
 	private String email;
 	
-	@Column(name = "fechaNacimiento", updatable = false)//no se puede actualizar
+	@Column(name = "fechaNacimientoEstudiante", updatable = false)//no se puede actualizar
 	private LocalDate fechaNacimiento;
 	
 	// Constructores
