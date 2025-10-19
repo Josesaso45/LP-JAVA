@@ -21,8 +21,14 @@ public class Docente {
 	@Column(name = "nombreDocente", length = 100, nullable = false)
 	private String nombre;
 	
+	@Column(name = "apellidoDocente", length = 100, nullable = false)
+	private String apellido;
+	
 	@Column(name = "sueldoDocente", length = 100, nullable = false)
 	private double Sueldo;
+	
+	@Column(name = "correoDocente", length = 100, nullable = false)
+	private String correo;
 	
 	@Column(name = "fechaNacimientoDocente", updatable = false, unique = true)
 	private LocalDate fechaNacimiento;
@@ -31,11 +37,13 @@ public class Docente {
 		
 	}
 
-	public Docente(int id, String nombre, double sueldo, LocalDate fechaNacimiento) {
+	public Docente(int id, String nombre, String apellido, double sueldo, String correo, LocalDate fechaNacimiento) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
+		this.apellido = apellido;
 		Sueldo = sueldo;
+		this.correo = correo;
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -55,12 +63,28 @@ public class Docente {
 		this.nombre = nombre;
 	}
 
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
 	public double getSueldo() {
 		return Sueldo;
 	}
 
 	public void setSueldo(double sueldo) {
 		Sueldo = sueldo;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 
 	public LocalDate getFechaNacimiento() {
@@ -73,9 +97,11 @@ public class Docente {
 
 	@Override
 	public String toString() {
-		return "Docente [id=" + id + ", nombre=" + nombre + ", Sueldo=" + Sueldo + ", fechaNacimiento="
-				+ fechaNacimiento + "]";
+		return "Docente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", Sueldo=" + Sueldo
+				+ ", correo=" + correo + ", fechaNacimiento=" + fechaNacimiento + "]";
 	}
+
+	
 	
 	
 }

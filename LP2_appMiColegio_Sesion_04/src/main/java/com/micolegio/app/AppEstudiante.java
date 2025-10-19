@@ -12,76 +12,116 @@ import jakarta.persistence.Persistence;
 public class AppEstudiante {
 	public static void main(String[] args) {
 		
-		System.out.println("Registro de Estudiante");
-		
-		int opcion = 0;
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("\n-- CRUD ESTUDIANTE --");
-		System.out.println("Crear Estudiante");
-		System.out.println("Buscar Estudiante");
-		System.out.println("Actualizar Estudiante");
-		System.out.println("Eliminar Estudiante");	
-		System.out.println("Salir");
-		System.out.println("Elija una opcion: ");
 		
 		//Persistencia4
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("LP2_appMiColegio_Sesion_04PU");
 		EntityManager em = emf.createEntityManager();
 		
-		opcion = sc.nextInt();
-		sc.nextLine();
+		//Iniciando Variables
+		Estudiante objEst1 = new Estudiante();
+		Scanner sc = new Scanner(System.in);
 		
-		switch (opcion) {
-		case 1:
-			
-			//Crear Objeto Estudiante
-			Estudiante objEst1 = new Estudiante();
-			
-			System.out.println("Digite su nombre: ");
-			objEst1.setNombre(sc.nextLine());
-			
-			System.out.println("Digite su apellido: ");
-			objEst1.setApellido(sc.nextLine());
-			
-			System.out.println("Digite su email: ");
-			objEst1.setEmail(sc.nextLine());
-			
-			System.out.println("Digite su fecha de nacimiento (YYYY-MM-DD): ");
-			objEst1.setFechaNacimiento(LocalDate.parse(sc.nextLine()));
-			
-			//Ejecucion 
-			em.getTransaction().begin();
-			em.persist(objEst1);
-			em.getTransaction().commit();
-			
-			//Cerrar Persistencia
-			System.out.println("Estudiante registrado con exito");
-			break;
-		case 2:
-			System.out.println("Rutina Buscar Estudiante");
-			break;
-		case 3:
-			System.out.println("Rutina Actualizar Estudiante");
-			break;
-		case 4:
-			//Datos
-			System.out.println("Digite el ID del estudiante a eliminar: ");
-			Estudiante estudianteEliminar = em.find(Estudiante.class, sc.nextInt());
-			
-			//Ejecucion
-			em.getTransaction().begin();
-			em.remove(estudianteEliminar);
-			em.getTransaction().commit();
-			System.out.println("Estudiante eliminado con exito");
-			
-			break;
-		case 5:
-			System.out.println("Salir");
-			break;
-		default:
-			System.out.println("Opcion no valida");
-			break;
+		int opcion = 0;
+		while (opcion != 5) {
+			System.out.println("Registro de Estudiante \n");
+
+			System.out.println("\n-- CRUD ESTUDIANTE --");
+			System.out.println("1. Crear Estudiante");
+			System.out.println("2. Buscar Estudiante");
+			System.out.println("3. Actualizar Estudiante");
+			System.out.println("4. Eliminar Estudiante");	
+			System.out.println("5. Salir");
+			System.out.println("Elija una opcion: ");
+				
+
+		
+			opcion = sc.nextInt();
+			sc.nextLine();
+		
+			switch (opcion) {
+			case 1:
+				//Datos
+				System.out.println("Digite su nombre: ");
+				objEst1.setNombre(sc.nextLine());
+				
+				System.out.println("Digite su apellido: ");
+				objEst1.setApellido(sc.nextLine());
+				
+				System.out.println("Digite su email: ");
+				objEst1.setEmail(sc.nextLine());
+				
+				System.out.println("Digite su fecha de nacimiento (YYYY-MM-DD): ");
+				objEst1.setFechaNacimiento(LocalDate.parse(sc.nextLine()));
+				
+				//Ejecucion 
+				em.getTransaction().begin();
+				em.persist(objEst1);
+				em.getTransaction().commit();
+				
+				//Cerrar Persistencia
+				System.out.println("Estudiante registrado con exito");
+				break;
+			case 2:
+				
+				System.out.println("Digita el ID del estudiante a buscar: ");
+				
+				int idEstudiante = sc.nextInt();
+				
+				Estudiante estudianteEncontrado = em.find(Estudiante.class, idEstudiante);
+				
+				if (estudianteEncontrado != null) {
+					System.out.println("Id" + estudianteEncontrado.getId() + "\n");
+					System.out.println("Nombre: " + estudianteEncontrado.getNombre() + "\n");
+					System.out.println("Apellido: " + estudianteEncontrado.getApellido() + "\n");
+					System.out.println("Email: " + estudianteEncontrado.getEmail() + "\n");
+					System.out.println("Fecha de Nacimiento: " + estudianteEncontrado.getFechaNacimiento() + "\n");
+					} else {
+						System.out.println("Estudiante no encontrado");
+					}
+				
+				
+				break;
+			case 3:
+				System.out.println("Digita el ID del estudiante a actualizar: ");
+				
+				//Datos
+				Estudiante estudianteActualizar = em.find(Estudiante.class, sc.nextInt());
+				sc.nextLine();
+				
+				System.out.println("Digite el nuevo nombre: ");
+				estudianteActualizar.setNombre(sc.nextLine());
+				
+				System.out.println("Digite el nuevo apellido: ");
+				estudianteActualizar.setApellido(sc.nextLine());
+				
+				System.out.println("Digite el nuevo email: ");
+				estudianteActualizar.setEmail(sc.nextLine());
+				//Ejecucion
+				
+				em.getTransaction().begin();
+				em.merge(estudianteActualizar);//Actualizar
+				em.getTransaction().commit();
+				break;
+			case 4:
+				//Datos
+				System.out.println("Digite el ID del estudiante a eliminar: ");
+				Estudiante estudianteEliminar = em.find(Estudiante.class, sc.nextInt());
+				
+				//Ejecucion
+				em.getTransaction().begin();
+				em.remove(estudianteEliminar);
+				em.getTransaction().commit();
+				System.out.println("Estudiante eliminado con exito");
+				
+				break;
+			case 5:
+				System.out.println("Salir");
+				break;
+			default:
+				System.out.println("Opcion no valida");
+				break;
+			}
 		}
+		//fin del menu
 	}
 }
