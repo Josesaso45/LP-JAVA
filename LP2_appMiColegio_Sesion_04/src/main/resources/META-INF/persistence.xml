@@ -7,9 +7,11 @@
     <persistence-unit name="LP2_appMiColegio_Sesion_04PU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
-		<class>com.micolegio.model.Estudiante</class> 
-        <class>com.micolegio.model.Docente</class>
-        <class>com.micolegio.model.Curso</class>
+        
+        <class>com.micolegio.model.Estudiante</class> 
+        <!--<class>com.micolegio.model.Docente</class>
+        <class>com.micolegio.model.Curso</class>-->
+
 
         <properties>
             <!-- Propiedades de la conexión a la base de datos -->

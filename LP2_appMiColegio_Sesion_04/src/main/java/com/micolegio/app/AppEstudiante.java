@@ -11,6 +11,7 @@ import jakarta.persistence.Persistence;
 
 public class AppEstudiante {
 	public static void main(String[] args) {
+		
 		System.out.println("Registro de Estudiante");
 		
 		int opcion = 0;
@@ -24,6 +25,7 @@ public class AppEstudiante {
 		System.out.println("Salir");
 		System.out.println("Elija una opcion: ");
 		
+		//Persistencia4
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("LP2_appMiColegio_Sesion_04PU");
 		EntityManager em = emf.createEntityManager();
 		
@@ -63,8 +65,15 @@ public class AppEstudiante {
 			System.out.println("Rutina Actualizar Estudiante");
 			break;
 		case 4:
-			//Crear Persistencia de Estudiante
+			//Datos
+			System.out.println("Digite el ID del estudiante a eliminar: ");
+			Estudiante estudianteEliminar = em.find(Estudiante.class, sc.nextInt());
 			
+			//Ejecucion
+			em.getTransaction().begin();
+			em.remove(estudianteEliminar);
+			em.getTransaction().commit();
+			System.out.println("Estudiante eliminado con exito");
 			
 			break;
 		case 5:
