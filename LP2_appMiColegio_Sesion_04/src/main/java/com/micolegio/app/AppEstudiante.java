@@ -18,7 +18,6 @@ public class AppEstudiante {
 		EntityManager em = emf.createEntityManager();
 		
 		//Iniciando Variables
-		Estudiante objEst1 = new Estudiante();
 		Scanner sc = new Scanner(System.in);
 		
 		int opcion = 0;
@@ -40,6 +39,8 @@ public class AppEstudiante {
 		
 			switch (opcion) {
 			case 1:
+				Estudiante objEst1 = new Estudiante();
+				
 				//Datos
 				System.out.println("Digite su nombre: ");
 				objEst1.setNombre(sc.nextLine());

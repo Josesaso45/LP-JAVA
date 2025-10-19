@@ -16,7 +16,6 @@ public class AppCurso {
 		EntityManager em = emf.createEntityManager();
 		
 		//Iniciando Variables
-		Curso objCur1 = new Curso();
 		Scanner sc = new Scanner(System.in);
 		
 		int opcion = 0;
@@ -37,12 +36,15 @@ public class AppCurso {
 		
 			switch (opcion) {
 			case 1:
+				Curso objCur1 = new Curso();
+
 				//Datos
 				System.out.println("Digite el nombre del curso: ");
 				objCur1.setNombre(sc.nextLine());
 				
 				System.out.println("Digite los creditos del curso: ");
 				objCur1.setCreditos(sc.nextInt());
+				sc.nextLine();
 				
 				//Ejecucion 
 				em.getTransaction().begin();
@@ -96,15 +98,19 @@ public class AppCurso {
 			case 4:
 				//datos
 				System.out.println("Digite el ID del curso a eliminar: ");
+				
 				int idEliminar = sc.nextInt();
+				Curso cursoEliminar = em.find(Curso.class, idEliminar);
 				
-				//Ejecucion
-				
-				em.getTransaction().begin();
-				em.remove(em.find(Curso.class, idEliminar));
-				em.getTransaction().commit();	
-				System.out.println("Curso eliminado con exito!");
-				
+				if(cursoEliminar != null) {
+					//Ejecucion
+					em.getTransaction().begin();
+					em.remove(cursoEliminar);
+					em.getTransaction().commit();	
+					System.out.println("Curso eliminado con exito!");
+				}else {
+					System.out.println("Curso no encontrado.");
+				}
 				break;
 			case 5:
 				System.out.println("Salir");
