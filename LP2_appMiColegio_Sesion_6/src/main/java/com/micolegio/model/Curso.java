@@ -5,10 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-//MANY TO ONE
+
 @Entity
 @Table(name = "tblCursos")
 public class Curso {
@@ -23,12 +21,8 @@ public class Curso {
 	
 	@Column(name = "creditosCurso", length = 100, nullable = false)
 	private int creditos;
+
 	
-	@ManyToOne
-	@JoinColumn(name = "nive_id", nullable = false)
-	private Nivel nivel;//FK
-	
-	//metodos
 	public Curso() {
 		
 	}
@@ -68,14 +62,6 @@ public class Curso {
 	@Override
 	public String toString() {
 		return "Curso [id=" + id + ", nombre=" + nombre + ", creditos=" + creditos + "]";
-	}
-
-	public Nivel getNivel() {
-		return nivel;
-	}
-
-	public void setNivel(Nivel nivel) {
-		this.nivel = nivel;
 	}
 	
 	

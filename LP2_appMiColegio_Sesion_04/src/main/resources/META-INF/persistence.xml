@@ -11,6 +11,7 @@
         <class>com.micolegio.model.Estudiante</class> 
         <class>com.micolegio.model.Docente</class>
         <class>com.micolegio.model.Curso</class>
+        <class>com.micolegio.model.Nivel</class>
 
 
         <properties>
