@@ -3,6 +3,7 @@ package com.micolegio.app;
 import java.util.Scanner;
 
 import com.micolegio.model.Curso;
+import com.micolegio.model.Nivel;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -45,6 +46,17 @@ public class AppCurso {
 				objCur1.setCreditos(sc.nextInt());
 				sc.nextLine();
 				
+				System.out.println("Digite el ID del nivel: ");
+			    int idNivel = sc.nextInt();
+			    sc.nextLine();
+
+			    Nivel nivel = em.find(Nivel.class, idNivel);
+			    if (nivel == null) {
+			        System.out.println("Nivel no existe. Curso NO se guardará.");
+			        break;
+			    }
+			    objCur1.setNivel(nivel);
+				
 				//Ejecucion 
 				em.getTransaction().begin();
 				em.persist(objCur1);
@@ -84,6 +96,17 @@ public class AppCurso {
 					
 					System.out.println("Digite los nuevos creditos del curso: ");
 					cursoActualizar.setCreditos(sc.nextInt());
+					
+					System.out.println("Digite el ID del nuevo nivel: ");
+				    int nuevoIdNivel = sc.nextInt();
+				    sc.nextLine();
+
+				    Nivel nuevoNivel = em.find(Nivel.class, nuevoIdNivel);
+				    if (nuevoNivel == null) {
+				        System.out.println("Nivel no existe. Curso NO se actualizará.");
+				        break;
+				    }
+				    cursoActualizar.setNivel(nuevoNivel);
 					
 					em.getTransaction().begin();
 					em.merge(cursoActualizar);

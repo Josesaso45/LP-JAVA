@@ -32,15 +32,17 @@ public class Curso {
 	public Curso() {
 		
 	}
-	
-	//constructores
-	public Curso(int id, String nombre, int creditos) {
+
+	public Curso(int id, String nombre, int creditos, Nivel nivel) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.creditos = creditos;
+		this.nivel = nivel;
 	}
 
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -65,11 +67,6 @@ public class Curso {
 		this.creditos = creditos;
 	}
 
-	@Override
-	public String toString() {
-		return "Curso [id=" + id + ", nombre=" + nombre + ", creditos=" + creditos + "]";
-	}
-
 	public Nivel getNivel() {
 		return nivel;
 	}
@@ -77,6 +74,12 @@ public class Curso {
 	public void setNivel(Nivel nivel) {
 		this.nivel = nivel;
 	}
+
+	@Override
+	public String toString() {
+		return "Curso [id=" + id + ", nombre=" + nombre + ", creditos=" + creditos + ", nivel=" + nivel + "]";
+	}
+	
 	
 	
 }
