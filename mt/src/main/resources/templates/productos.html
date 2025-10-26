@@ -12,20 +12,23 @@
 		  	
             <h3 class="text-primary">Agregar Productos</h3>
             
-            <form>
+            <form th:action="@{/productos/guardar}" method="post" th:object="${ProductoAInsertar}" class="needs-validation" novalidate>
             	<div class="form-floating mb-3">
-            		<input type="text" class="form-control" id="floatingInput" placeholder="Nombre del producto" required>
+            		<input type="text" th:field="*{nombreProducto}" class="form-control" id="floatingInput" placeholder="Nombre del producto" required>
             		<label for="floatingInput">Nombre del producto</label>
+            		<div class="invalid-feedback">Ingrese el nombre</div>
             	</div>  
             	
             	<div class="form-floating mb-3">
-            		<input type="number" step="0.01" class="form-control" id="floatingInput" placeholder="Precio del producto" required>
+            		<input type="number" th:field="*{precioProducto}" step="0.01" class="form-control" id="floatingInput" placeholder="Precio del producto" required>
             		<label for="floatingInput">Precio del producto</label>
+            		<div class="invalid-feedback">Ingrese el precio</div>
             	</div>
             	
             	<div class="form-floating mb-3">
-            		<input type="number" min="0" class="form-control" id="floatingInput" placeholder="Stock del producto" required>
+            		<input type="number" th:field="*{stockProducto}" min="0" class="form-control" id="floatingInput" placeholder="Stock del producto" required>
             		<label for="floatingInput">Stock del producto</label>
+            		<div class="invalid-feedback">Ingrese el stock</div>
             	</div>
             	
             	<button type="submit" class="btn btn-primary">
@@ -56,11 +59,16 @@
 			      <td th:text="${temp.stockProducto}"></td>	
 			      
 			      <td>
-			      	<i class="bi bi-pencil-square text-warning"></i>
+			      	<a th:href="@{/productos/editar/{id}(id=${temp.idProducto})}">
+			      		<i class="bi bi-pencil-square text-warning"></i>
+			      	</a>
 			      </td>
 			      
 			      <td>
-			      	<i class="bi bi-trash text-danger"></i>
+			      	<a th:href="@{/productos/eliminar/{id}(id=${temp.idProducto})}"
+			      		class="btn-eliminar" th:data-id="${temp.nombreProducto}">
+			      		<i class="bi bi-trash text-danger"></i>
+			      	</a>
 			      </td>
 			    </tr>
 			    
@@ -71,6 +79,80 @@
 		  
 	  </main>
 	  <footer th:replace="~{layout/base :: footer}"></footer>
+	  
+	  <script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+		  (() => {
+		    'use strict'
+	
+		    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		    const forms = document.querySelectorAll('.needs-validation')
+	
+		    // Loop over them and prevent submission
+		    Array.from(forms).forEach(form => {
+		      form.addEventListener('submit', event => {
+		        if (!form.checkValidity()) {
+		          event.preventDefault()
+		          event.stopPropagation()
+		        }
+	
+		        form.classList.add('was-validated')
+		      }, false)
+		    })
+		  })()
+	  </script>
+	  
+	  <script th:inline="javascript">
+		
+		document.addEventListener('DOMContentLoaded', function() {
+	    	
+			// 1. Thymeleaf pondrá el string real, o la palabra 'null' (sin comillas)
+	    	const mensajeExito = /*[[${guardadoExitoso}]]*/ null; 
+	    	
+			// 2. Esta comprobación ahora funciona perfectamente
+			//    - if("texto...") -> true
+			//    - if(null) -> false
+	    	if(mensajeExito) { 
+	    		Swal.fire({
+	    			title: "¡Operación Exitosa!",
+	    			text: mensajeExito,
+	    			icon: "success",
+	    			showConfirmButton: false,
+	    			timer: 2000
+	    		});
+	    	}
+	    	
+			// Manejo de la eliminación con SweetAlert2
+			const botonesEliminar = document.querySelectorAll('.btn-eliminar');
+			botonesEliminar.forEach(boton => {
+				boton.addEventListener('click', function(event) {
+                    event.preventDefault(); 
+                    
+                    const urlEliminar = this.getAttribute('href');
+                    const nombreProducto = this.getAttribute('data-id');
+                    
+                    Swal.fire({
+                        title: '¿Estás seguro?',
+                        text: `Eliminar el producto: ${nombreProducto}`,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Sí, eliminar',
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Redirigir a la URL de eliminación si se confirma
+                            window.location.href = urlEliminar;
+                        }
+                    });
+                });
+			}
+	    );
+		
+		
+		
+	  </script>
   </div>
   </body>
 </html>

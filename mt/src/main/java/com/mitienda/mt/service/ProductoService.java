@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.mitienda.mt.model.Producto;
 import com.mitienda.mt.repository.ProductoRepository;
 
+import jakarta.persistence.Id;
+
 @Service
 public class ProductoService {	
 	
@@ -23,11 +25,20 @@ public class ProductoService {
 		return productoRepository.findAll();
 	}
 	
-	//Obtener un producto por ID
-	
-	
-	//Eliminar un producto por ID
+	//Guardar un producto
+	public  Producto guardarProductos(Producto producto) {
+		return productoRepository.save(producto);
+	}
 	
 	//Actualizar un producto
+	public Producto buscarPorIdProductos(Long id) {
+		
+		return productoRepository.findById(id).orElse(null);
+		// .orElse(null) significa: "si la caja está vacía, devuelve null"
+	}
 	
+	//Eliminar un producto
+	public void eliminarPorIdProductos(Long id) {
+		productoRepository.deleteById(id);
+	}
 }
