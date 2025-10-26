@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  
+  <head th:replace="~{layout/base :: head}"></head>
+  
+  <body>
+  	<div class="container">
+	  <header class="row">
+		<nav th:replace="~{layout/base :: navBar}"></nav>
+	  </header>
+	  
+	  <main class="row justify-content-center">
+		  <section class="col-lg-6 col-md-8 col-sm-12 p-5">
+		  	
+            <h3 class="text-primary">Registro de Clientes</h3>
+            
+            <form th:object="${cliente}" th:action="@{/clientes/registrar}" method="post">
+            	
+            	<div class="form-floating mb-3">
+            		<input type="number" class="form-control" th:field="*{codCliente}" placeholder="Código" required>
+            		<label for="codCliente">Código de Cliente</label>
+            	</div>
+            	
+            	<div class="form-floating mb-3">
+            		<input type="text" class="form-control" th:field="*{nomCliente}" placeholder="Nombre" required>
+            		<label for="nomCliente">Nombre de Cliente</label>
+            	</div>
+
+            	<div class="form-floating mb-3">
+					<select class="form-select" th:field="*{tipoCliente}" required>
+					  <option value="" selected disabled>Seleccione un tipo</option>
+					  
+					  <option th:each="tipo : ${tipos}" 
+					  		  th:value="${tipo.idTipoCliente}" 
+					  		  th:text="${tipo.descripcion}">
+					  </option>
+					</select>
+            		<label for="tipoCliente">Tipo de Cliente</label>
+            	</div>
+
+            	<div class="form-floating mb-3">
+            		<input type="tel" class="form-control" th:field="*{telefono}" placeholder="Teléfono">
+            		<label for="telefono">Teléfono de Cliente</label>
+            	</div>
+
+            	<div class="form-floating mb-3">
+            		<input type="text" class="form-control" th:field="*{dni}" placeholder="DNI" required>
+            		<label for="dni">DNI de Cliente</label>
+            	</div>
+            	
+            	<button type="submit" class="btn btn-primary">
+            		<span>Registrar</span>
+            	</button>
+            	
+            	<button type="submit" class="btn btn-secondary"
+            			th:formaction="@{/clientes/consultar}"
+            			formmethod="get">
+            		<span>Consultar</span>
+            	</button>
+            	
+            </form>
+		  </section>
+	  </main>
+	  
+	  <footer th:replace="~{layout/base :: footer}"></footer>
+  </div>
+  </body>
+</html>

@@ -27,9 +27,15 @@ public class ProoductoContoller {
 		objPro.setPrecio(1500.00);
 		objPro.setStock(10);modo 01*/
 		
-		List<String> listProd =  new ArrayList<String>;
+		List<String> listProd =  new ArrayList<String>();
 		
-		model.addAttribute("producto", objPro);
+		listProd.add("Atrevia 360");
+		listProd.add("Cani Tabs");
+		listProd.add("Power Quest");
+		listProd.add("Atrevia Trio Catss");
+		
+		
+		model.addAttribute("producto", listProd);
 		
 		
 		return "producto";

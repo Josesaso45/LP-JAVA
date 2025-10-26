@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  
+  <head th:replace="~{layout/base :: head}"></head>
+  
+  <body>
+  	<div class="container">
+	  <header class="row">
+		<nav th:replace="~{layout/base :: navBar}"></nav>
+	  </header>
+	  
+	  <main class="row justify-content-center">
+		  <section class="col-lg-10 col-md-12 col-sm-12 p-5">
+          	
+            <h3 class="text-primary">Listado de Clientes</h3>
+		  	
+            <a th:href="@{/clientes/registro}" class="btn btn-primary mb-3">
+            	Volver al Registro
+            </a>
+
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">Código</th>
+			      <th scope="col">Nombre</th>
+			      <th scope="col">Teléfono</th>
+			      <th scope="col">DNI</th>
+			      <th scope="col">Tipo Cliente</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	<tr th:if="${clientes.isEmpty()}">
+			  		<td colspan="5" class="text-center">No se encontraron clientes para ese tipo.</td>
+			  	</tr>
+			  
+			    <tr th:each="cli : ${clientes}">
+			      <th scope="row" th:text="${cli.codCliente}"></th>
+			      <td th:text="${cli.nomCliente}"></td>
+			      <td th:text="${cli.telefono}"></td>
+			      <td th:text="${cli.dni}"></td>	
+			      <td th:text="${cli.tipoCliente.descripcion}"></td>
+			    </tr>
+			    
+			  </tbody>
+			</table>
+		  </section>
+	  </main>
+	  
+	  <footer th:replace="~{layout/base :: footer}"></footer>
+  </div>
+  </body>
+</html>

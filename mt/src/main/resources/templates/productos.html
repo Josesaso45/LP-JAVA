@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="~{layout/base :: head}"></head>
+  <body>
+  	<div class="container">
+	  <header class="row">
+		<nav th:replace="~{layout/base :: navBar}"></nav>
+	  </header>
+	  <main class="row">
+		  <!-- Inicio de la pagina dinamica -->
+		  <section class="col-lg-4 col-md-6 col-sm-12 p-5">
+		  	
+            <h3 class="text-primary">Agregar Productos</h3>
+            
+            <form>
+            	<div class="form-floating mb-3">
+            		<input type="text" class="form-control" id="floatingInput" placeholder="Nombre del producto" required>
+            		<label for="floatingInput">Nombre del producto</label>
+            	</div>  
+            	
+            	<div class="form-floating mb-3">
+            		<input type="number" step="0.01" class="form-control" id="floatingInput" placeholder="Precio del producto" required>
+            		<label for="floatingInput">Precio del producto</label>
+            	</div>
+            	
+            	<div class="form-floating mb-3">
+            		<input type="number" min="0" class="form-control" id="floatingInput" placeholder="Stock del producto" required>
+            		<label for="floatingInput">Stock del producto</label>
+            	</div>
+            	
+            	<button type="submit" class="btn btn-primary">
+            		<span>Agregar Producto</span>
+            	</button>
+            </form>
+		  </section>
+		  <section class="col-8 col-md-6 col-sm-12 p-5">
+          	
+            <h3 class="text-primary">Lista de Productos</h3>
+		  	
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">Id</th>
+			      <th scope="col">Nombre</th>
+			      <th scope="col">Precio</th>
+			      <th scope="col">Stock</th>
+			      <th scope="col" class="text-center">Editar</th>
+			      <th scope="col" class="text-center">Eliminar</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="temp : ${productos}">
+			      <th scope="row" th:text="${temp.idProducto}">1</th>
+			      <td th:text="${temp.nombreProducto}"></td>
+			      <td th:text="${temp.precioProducto}"></td>
+			      <td th:text="${temp.stockProducto}"></td>	
+			      
+			      <td>
+			      	<i class="bi bi-pencil-square text-warning"></i>
+			      </td>
+			      
+			      <td>
+			      	<i class="bi bi-trash text-danger"></i>
+			      </td>
+			    </tr>
+			    
+			  </tbody>
+			</table>
+		  </section>
+		  <!-- Inicio de la pagina dinamica -->
+		  
+	  </main>
+	  <footer th:replace="~{layout/base :: footer}"></footer>
+  </div>
+  </body>
+</html>
