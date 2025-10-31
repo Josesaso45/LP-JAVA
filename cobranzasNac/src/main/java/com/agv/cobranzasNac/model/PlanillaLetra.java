@@ -17,7 +17,7 @@ public class PlanillaLetra {
     @Column(name = "id_planilla")
     private Long idPlanilla;
     
-    @Column(name = "numero_planilla", length = 50, nullable = false, unique = true)
+    @Column(name = "numero_planilla", length = 50, nullable = true, unique = true)
     private String numeroPlanilla; // Identificador único de la planilla
 
     /**

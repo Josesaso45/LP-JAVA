@@ -12,7 +12,7 @@ public class Factura {
     @Column(name = "id_factura")
     private Long idFactura;
 
-    @Column(name = "numero_factura", length = 50, nullable = false, unique = true)
+    @Column(name = "numero_factura", length = 50, nullable = true, unique = true)
     private String numeroFactura;
     
     @Column(name = "fecha_emision", nullable = false)

@@ -1,10 +1,144 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  
+  <head th:replace="~{layout/base :: head}"></head>
+  
+  <body>
+  	<div class="container">
+	  
+      <header class="row">
+		<nav th:replace="~{layout/base :: navBar}"></nav>
+	  </header>
+	  
+	  <main class="row">
+		  
+          <section class="col-lg-4 col-md-6 col-sm-12 p-5">
+		  	
+            <h3 class="text-primary">Gestión de Pedidos</h3>
+            
+            <form th:action="@{/pedidos/guardar}" method="post" th:object="${pedidoAInsertar}" class="needs-validation" novalidate>
+            	
+                <input type="hidden" th:field="*{idPedido}" />
+                <input type="hidden" th:field="*{activo}" />
 
-</body>
+                <div class="form-floating mb-3">
+                  <select th:field="*{vendedor}" class="form-select" id="vendedorSelect" required>
+                    <option value="">-- Seleccione un Vendedor --</option>
+                    <option th:each="v : ${vendedores}" 
+                            th:value="${v.idVendedor}" 
+                            th:text="${v.nombre}">
+                    </option>
+                  </select>
+                  <label for="vendedorSelect">Vendedor</label>
+                  <div class="invalid-feedback">Debe seleccionar un vendedor.</div>
+                </div>
+                
+                <div class="form-floating mb-3">
+                  <select th:field="*{cliente}" class="form-select" id="clienteSelect" required>
+                    <option value="">-- Seleccione un Cliente --</option>
+                    <option th:each="c : ${clientes}" 
+                            th:value="${c.idCliente}" 
+                            th:text="${c.nombre}">
+                    </option>
+                  </select>
+                  <label for="clienteSelect">Cliente</label>
+                  <div class="invalid-feedback">Debe seleccionar un cliente.</div>
+                </div>
+
+                <div class="form-floating mb-3">
+            		<input type="number" th:field="*{total}" step="0.01" class="form-control" id="totalInput" placeholder="Monto Total" required>
+            		<label for="totalInput">Monto Total</label>
+            		<div class="invalid-feedback">Ingrese el monto total.</div>
+            	</div>
+                
+                <hr>
+                <h5 class="text-secondary">Condición de Pago</h5>
+                
+                <div class="form-floating mb-3">
+                  <select th:field="*{condicionPagoTipo}" class="form-select" id="condicionTipo" required>
+                    <option value="">-- Seleccione Condición --</option>
+                    <option value="CONTADO">Contado</option>
+                    <option value="CREDITO">Crédito</option>
+                    <option value="LETRAS">Letras</option>
+                  </select>
+                  <label for="condicionTipo">Tipo de Condición</label>
+                  <div class="invalid-feedback">Seleccione un tipo.</div>
+                </div>
+
+            	<div class="form-floating mb-3">
+            		<input type="number" th:field="*{terminoDias}" min="0" class="form-control" id="terminoInput" placeholder="Término (Días)">
+            		<label for="terminoInput">Término (Días)</label>
+            	</div>
+            	
+            	<div class="form-floating mb-3">
+            		<input type="number" th:field="*{numeroCuotas}" min="1" class="form-control" id="cuotasInput" placeholder="Número de Cuotas">
+            		<label for="cuotasInput">Número de Cuotas</label>
+            	</div>
+            	
+                <button type="submit" class="btn btn-primary">
+            		<span>Guardar Pedido</span>
+            	</button>
+                
+            </form> </section>
+          
+          <section class="col-8 col-md-6 col-sm-12 p-5">
+          	
+            <h3 class="text-primary">Lista de Pedidos Pendientes</h3>
+		  	
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">ID</th>
+                  <th scope="col">Vendedor</th>
+                  <th scope="col">Cliente</th> <th scope="col">Total</th>
+			      <th scope="col">Condición</th>
+			      <th scope="col">Estado</th>
+                  <th scope="col" class="text-center">Procesar</th>
+			      <th scope="col" class="text-center">Editar</th>
+			      <th scope="col" class="text-center">Anular</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="p : ${pedidos}">
+			      <th scope="row" th:text="${p.idPedido}">1</th>
+                  <td th:text="${p.vendedor != null} ? ${p.vendedor.nombre} : 'N/A'"></td>
+                  <td th:text="${p.cliente != null} ? ${p.cliente.nombre} : 'N/A'"></td>
+			      <td th:text="${#numbers.formatCurrency(p.total)}">$ 1,000.00</td>
+			      <td th:text="${p.condicionPagoTipo}">LETRAS</td>	
+                  <td th:text="${p.estado}">Registrado</td>
+			      
+                  <td>
+			      	<a th:href="@{/facturacion/procesar/{id}(id=${p.idPedido})}"
+                       class="btn-procesar" th:data-id="${p.idPedido}">
+			      		<i class="bi bi-gear-fill text-success"></i>
+			      	</a>
+			      </td>
+                  
+                  <td>
+			      	<a th:href="@{/pedidos/editar/{id}(id=${p.idPedido})}">
+			      		<i class="bi bi-pencil-square text-warning"></i>
+			      	</a>
+			      </td>
+			      
+                  <td>
+			      	<a th:href="@{/pedidos/eliminar/{id}(id=${p.idPedido})}"
+			      		class="btn-eliminar" th:data-id="${'Pedido N° ' + p.idPedido}">
+			      		<i class="bi bi-trash text-danger"></i>
+			      	</a>
+			      </td>
+			    </tr>
+			    
+			  </tbody>
+			</table>
+		  </section>
+		  
+	  </main>
+      
+      <footer th:replace="~{layout/base :: footer}"></footer>
+	  
+      <script th:replace="~{layout/base :: bootstrapValidation}"></script>
+	  <script th:replace="~{layout/base :: sweetAlerts(mensajeExito = ${guardadoExitoso}, mensajeError = ${error}, tipoItem = 'Pedido')}"></script>
+
+  </div>
+  </body>
 </html>

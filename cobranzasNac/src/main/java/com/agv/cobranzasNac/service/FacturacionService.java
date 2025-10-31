@@ -33,7 +33,7 @@ public class FacturacionService {
     private final PedidoRepository pedidoRepository;
     private final FacturaRepository facturaRepository;
     private final PlanillaLetraRepository planillaLetraRepository;
-    // Nota: No necesitamos LetraRepository porque usaremos CascadeType.ALL
+    // (El comentario sobre CascadeType.ALL ya no es válido, pero lo dejamos)
 
     @Autowired
     public FacturacionService(PedidoRepository pedidoRepository, 
@@ -56,12 +56,9 @@ public class FacturacionService {
     public Factura procesarPedido(Long idPedido) {
         
         // --- 1. OBTENER DATOS ---
-        // Buscamos el pedido o lanzamos un error si no existe
         Pedido pedido = pedidoRepository.findById(idPedido)
                 .orElseThrow(() -> new RuntimeException("Error: Pedido no encontrado con ID: " + idPedido));
 
-        // Validación: Revisamos si el pedido ya fue facturado
-        // (Este es un paso de seguridad para evitar duplicados)
         if (pedido.getEstado() != null && pedido.getEstado().equals("Facturado")) {
             throw new RuntimeException("Error: El pedido " + idPedido + " ya ha sido facturado.");
         }
@@ -70,13 +67,16 @@ public class FacturacionService {
 
         // --- 2. CREAR LA FACTURA (Entidad Hija) ---
         Factura factura = new Factura();
-        factura.setPedido(pedido); // Asignamos la relación (clave foránea id_pedido)
+        factura.setPedido(pedido); 
         factura.setFechaEmision(hoy);
         
-        // Convertimos el Total (Double) del Pedido a BigDecimal para cálculos seguros
-        // NOTA: Lo ideal es que 'total' en Pedido y 'montoTotal' en Factura sean BigDecimal.
+        // ===================================================
+        // ¡CORRECCIÓN 1: Asegurar que la Factura nazca activa!
+        // ===================================================
+        factura.setActivo(true); 
+        
         BigDecimal montoTotal = new BigDecimal(pedido.getTotal().toString());
-        factura.setMontoTotal(montoTotal.doubleValue()); // Guardamos el Double en Factura
+        factura.setMontoTotal(montoTotal.doubleValue()); 
 
         // --- 3. LÓGICA DE NEGOCIO (Condiciones de Pago) ---
         String tipoPago = pedido.getCondicionPagoTipo();
@@ -84,38 +84,56 @@ public class FacturacionService {
         Integer numCuotas = pedido.getNumeroCuotas();
 
         if ("CONTADO".equals(tipoPago)) {
-            factura.setFechaVencimiento(hoy); // Vence hoy mismo
+            factura.setFechaVencimiento(hoy); 
             factura.setEstado("Pendiente de Contado");
+            
+            // --- 4. GUARDAR LA FACTURA (Contado) ---
+            Factura facturaGuardada = facturaRepository.save(factura);
+            // Generamos folio
+            String numeroFactura = String.format("F001-%08d", facturaGuardada.getIdFactura());
+            facturaGuardada.setNumeroFactura(numeroFactura);
+            facturaRepository.save(facturaGuardada);
         
         } else if ("CREDITO".equals(tipoPago)) {
-            factura.setFechaVencimiento(hoy.plusDays(terminoDias)); // Vence en X días
+            factura.setFechaVencimiento(hoy.plusDays(terminoDias)); 
             factura.setEstado("Crédito a " + terminoDias + " días");
+
+            // --- 4. GUARDAR LA FACTURA (Crédito) ---
+            Factura facturaGuardada = facturaRepository.save(factura);
+            // Generamos folio
+            String numeroFactura = String.format("F001-%08d", facturaGuardada.getIdFactura());
+            facturaGuardada.setNumeroFactura(numeroFactura);
+            facturaRepository.save(facturaGuardada); 
         
         } else if ("LETRAS".equals(tipoPago)) {
-            // La factura vence en la fecha de la última letra
             factura.setFechaVencimiento(hoy.plusDays(terminoDias));
             factura.setEstado("Canjeado por Letras");
             
             // --- 4. GUARDAR LA FACTURA (1er guardado para obtener ID) ---
             Factura facturaGuardada = facturaRepository.save(factura);
 
-            // --- 4b. GENERAR FOLIO Y ACTUALIZAR (2do guardado) --- // --- CAMBIO ---
+            // --- 4b. GENERAR FOLIO Y ACTUALIZAR (2do guardado) --- 
             String numeroFactura = String.format("F001-%08d", facturaGuardada.getIdFactura());
             facturaGuardada.setNumeroFactura(numeroFactura);
-            facturaRepository.save(facturaGuardada); // Guardamos la actualización
+            facturaRepository.save(facturaGuardada); 
             
             // --- 5. CREAR LA PLANILLA DE LETRAS ---
             PlanillaLetra planilla = new PlanillaLetra();
             planilla.setFactura(facturaGuardada); 
             planilla.setTipoGestion("EN CARTERA"); 
             
-            // --- 5b. GUARDAR PLANILLA (1er guardado para obtener ID) --- // --- CAMBIO ---
+            // ===================================================
+            // ¡CORRECCIÓN 2: Asegurar que la Planilla nazca activa!
+            // ===================================================
+            planilla.setActivo(true);
+            
+            // --- 5b. GUARDAR PLANILLA (1er guardado para obtener ID) --- 
             PlanillaLetra planillaGuardada = planillaLetraRepository.save(planilla);
 
-            // --- 5c. GENERAR FOLIO Y ACTUALIZAR (2do guardado) --- // --- CAMBIO ---
+            // --- 5c. GENERAR FOLIO Y ACTUALIZAR (2do guardado) --- 
             String numeroPlanilla = String.format("PL-%05d", planillaGuardada.getIdPlanilla());
             planillaGuardada.setNumeroPlanilla(numeroPlanilla);
-            planillaLetraRepository.save(planillaGuardada); // Guardamos la actualización
+            planillaLetraRepository.save(planillaGuardada); 
 
             
             // --- 6. CÁLCULO Y GENERACIÓN DE LETRAS (Bucle) ---
@@ -127,14 +145,18 @@ public class FacturacionService {
             for (int i = 1; i <= numCuotas; i++) {
                 Letra letra = new Letra();
                 
-                // --- CAMBIO (Usamos la planillaGuardada) ---
-                letra.setPlanillaLetra(planillaGuardada); // Asignamos la planilla ya guardada
+                letra.setPlanillaLetra(planillaGuardada); 
+                
+                // ===================================================
+                // ¡CORRECCIÓN 3: Asegurar que la Letra nazca activa!
+                // ===================================================
+                letra.setActivo(true);
                 
                 letra.setNumeroCuota(i + "/" + numCuotas);
                 letra.setEstado("Generada");
                 letra.setFechaVencimiento(hoy.plusDays(i * intervaloDias));
                 
-                // Lógica de redondeo (esto sigue igual)
+                // Lógica de redondeo
                 if (i == numCuotas) {
                     BigDecimal montoAcumulado = montoPorLetra.multiply(new BigDecimal(i - 1));
                     letra.setMonto(montoTotal.subtract(montoAcumulado));
@@ -142,22 +164,20 @@ public class FacturacionService {
                     letra.setMonto(montoPorLetra);
                 }
                 
-                // --- 6b. GUARDAR LETRA (1er guardado, DENTRO del bucle) --- // --- CAMBIO ---
+                // --- 6b. GUARDAR LETRA (1er guardado) --- 
                 Letra letraGuardada = letraRepository.save(letra);
 
-                // --- 6c. GENERAR FOLIO Y ACTUALIZAR (2do guardado) --- // --- CAMBIO ---
+                // --- 6c. GENERAR FOLIO Y ACTUALIZAR (2do guardado) --- 
                 String anio = String.valueOf(hoy.getYear());
                 String numeroLetra = String.format("%s-%04d", anio, letraGuardada.getIdLetra());
                 letraGuardada.setNumeroLetra(numeroLetra);
-                letraRepository.save(letraGuardada); // Guardamos la actualización
-                
+                letraRepository.save(letraGuardada); 
             }
-            
         }
         
         // --- 8. FINALIZAR Y ACTUALIZAR PEDIDO ---
         pedido.setEstado("Facturado");
-        pedidoRepository.save(pedido); // Actualizamos el estado del pedido
+        pedidoRepository.save(pedido); 
 
         return factura;
     }

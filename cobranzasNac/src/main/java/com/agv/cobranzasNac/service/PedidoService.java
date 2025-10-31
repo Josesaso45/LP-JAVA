@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.time.LocalDate;
+
 
 /**
  * Servicio CRUD para la entidad Pedido.
@@ -43,7 +45,17 @@ public class PedidoService {
      * @return El Pedido guardado (con su ID asignado).
      */
     public Pedido guardar(Pedido pedido) {
-        // Aquí se podría añadir lógica de validación antes de guardar
+        
+        if (pedido.getIdPedido() == null) {
+            
+            // 1. Asignamos la fecha de hoy
+            pedido.setFechaCreacion(LocalDate.now()); 
+            
+            if (pedido.getEstado() == null || pedido.getEstado().isEmpty()) {
+                pedido.setEstado("Registrado");
+            }
+        }
+
         return pedidoRepository.save(pedido);
     }
 

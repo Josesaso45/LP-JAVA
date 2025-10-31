@@ -56,7 +56,6 @@ public class Pedido {
 	// --- Relaciones con otras entidades ---
 	
 	// Relación con Vendedor (Muchos pedidos a un vendedor)
-    // Basado en el modelo conceptual
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cliente", nullable = false)
 	private Cliente cliente;
@@ -75,10 +74,8 @@ public class Pedido {
     @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Factura factura;
 	
-// --- Constructores, Getters y Setters ---
     
     public Pedido() {
-        // Constructor vacío requerido por JPA
     }
 
     

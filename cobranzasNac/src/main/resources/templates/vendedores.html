@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  
+  <head th:replace="~{layout/base :: head}"></head>
+  
+  <body>
+  	<div class="container">
+	  
+	  <header class="row">
+		<nav th:replace="~{layout/base :: navBar}"></nav>
+	  </header>
+	  
+	  <main class="row">
+		  
+          <section class="col-lg-4 col-md-6 col-sm-12 p-5">
+		  	
+            <h3 class="text-primary">Registrar Vendedor</h3>
+            
+            <form th:action="@{/vendedores/guardar}" method="post" th:object="${vendedorAInsertar}" class="needs-validation" novalidate>
+            	
+                <input type="hidden" th:field="*{idVendedor}" />
+                <input type="hidden" th:field="*{activo}" /> <div class="form-floating mb-3">
+            		<input type="text" th:field="*{nombre}" class="form-control" id="nombreInput" placeholder="Nombre completo" required>
+            		<label for="nombreInput">Nombre Completo</label>
+            		<div class="invalid-feedback">Ingrese el nombre</div>
+            	</div>  
+            	
+            	<div class="form-floating mb-3">
+            		<input type="text" th:field="*{codigo}" class="form-control" id="codigoInput" placeholder="Código de Vendedor" required>
+            		<label for="codigoInput">Código de Vendedor</label>
+            		<div class="invalid-feedback">Ingrese el código</div>
+            	</div>
+            	
+            	<button type="submit" class="btn btn-primary">
+            		<span>Guardar Vendedor</span>
+            	</button>
+            </form>
+		  </section>
+          
+          <section class="col-8 col-md-6 col-sm-12 p-5">
+          	
+            <h3 class="text-primary">Lista de Vendedores</h3>
+		  	
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">ID</th>
+			      <th scope="col">Código</th>
+			      <th scope="col">Nombre</th>
+			      <th scope="col" class="text-center">Editar</th>
+			      <th scope="col" class="text-center">Anular</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="v : ${vendedores}">
+			      <th scope="row" th:text="${v.idVendedor}">1</th>
+			      <td th:text="${v.codigo}">V-001</td>
+			      <td th:text="${v.nombre}">Nombre Vendedor</td>	
+			      
+			      <td class="text-center">
+			      	<a th:href="@{/vendedores/editar/{id}(id=${v.idVendedor})}">
+			      		<i class="bi bi-pencil-square text-warning"></i>
+			      	</a>
+			      </td>
+			      
+			      <td class="text-center">
+			      	<a th:href="@{/vendedores/eliminar/{id}(id=${v.idVendedor})}"
+			      		class="btn-eliminar" th:data-id="${v.nombre}">
+			      		<i class="bi bi-trash text-danger"></i>
+			      	</a>
+			      </td>
+			    </tr>
+			    
+			  </tbody>
+			</table>
+		  </section>
+		  
+	  </main>
+	  
+	  <footer th:replace="~{layout/base :: footer}"></footer>
+	  
+      <script th:replace="~{layout/base :: bootstrapValidation}"></script>
+	  <script th:replace="~{layout/base :: sweetAlerts(
+        mensajeExito = ${guardadoExitoso}, 
+        mensajeError = ${error}, 
+        tipoItem = 'Vendedor'
+      )}"></script>
+
+  </div>
+  </body>
+</html>

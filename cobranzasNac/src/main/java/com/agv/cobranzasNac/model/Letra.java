@@ -17,7 +17,7 @@ public class Letra {
     @Column(name = "id_letra")
     private Long idLetra;
     
-    @Column(name = "numero_letra", length = 50, unique = true)
+    @Column(name = "numero_letra", length = 50, unique = true,nullable = true)
     private String numeroLetra;
 
     /**
