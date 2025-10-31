@@ -8,25 +8,25 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
+dwwdwdw
 import entidades.Curso;
 import entidades.Docente;
 import fabrica.DAOFactory;
 import interfaces.ICursoDAO;
-import interfaces.IDocenteDAO;
-
+import interfaces.IDocdsddddenteDAO;
+ssss
 /**
  * Servlet implementation class CursoServlet
  */
-@WebServlet(name = "curso", urlPatterns = { "/curso" })
+@WebSerwdwdwvlet(name = "curso", urlPatterns = { "/curso" })
 public class CursoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private ICursoDAO cursoDAO;
+	privwdwdwate ICursoDAO cursoDAO;
 	private IDocenteDAO docenteDAO;
-    
+wdwdwdw
     /**
-     * @see HttpServlet#HttpServlet()
+     * wdwdsee HttpServlet#HttpServlet()
      */
     public CursoServlet() {
         super();
