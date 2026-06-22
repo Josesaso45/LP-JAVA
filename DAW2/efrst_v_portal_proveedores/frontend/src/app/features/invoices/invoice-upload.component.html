@@ -1,0 +1,116 @@
+<div class="page-container">
+  <h1 class="page-title">Carga de facturas</h1>
+  <p class="page-subtitle">
+    Arrastre su XML UBL 2.1 e indique la orden de compra para validación tributaria y three-way matching.
+  </p>
+
+  <div class="upload-layout">
+    <mat-card class="upload-card">
+      <mat-card-content>
+        <div
+          class="drop-zone"
+          [class.drop-zone-active]="isDragging"
+          [class.drop-zone-filled]="selectedFile"
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          (drop)="onDrop($event)"
+        >
+          @if (selectedFile) {
+            <mat-icon class="drop-icon success">description</mat-icon>
+            <p class="file-name">{{ selectedFile.name }}</p>
+            <p class="file-size">{{ (selectedFile.size / 1024) | number:'1.0-1' }} KB</p>
+            <button mat-stroked-button type="button" (click)="clearFile()">
+              <mat-icon>close</mat-icon>
+              Quitar archivo
+            </button>
+          } @else {
+            <mat-icon class="drop-icon">cloud_upload</mat-icon>
+            <p>Arrastre su XML aquí o haga clic para seleccionar</p>
+            <input
+              type="file"
+              accept=".xml,application/xml,text/xml"
+              (change)="onFileSelected($event)"
+              #fileInput
+              hidden
+            />
+            <button mat-raised-button color="primary" type="button" (click)="fileInput.click()">
+              Seleccionar archivo
+            </button>
+          }
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Número de orden de compra</mat-label>
+          <input matInput [(ngModel)]="purchaseOrderNumber" placeholder="PO00045" />
+          <mat-icon matSuffix>shopping_cart</mat-icon>
+        </mat-form-field>
+
+        @if (errorMessage) {
+          <p class="error-text">
+            <mat-icon>error_outline</mat-icon>
+            {{ errorMessage }}
+          </p>
+        }
+
+        <button
+          mat-raised-button
+          color="primary"
+          class="submit-btn"
+          [disabled]="loading || !selectedFile"
+          (click)="submit()"
+        >
+          @if (loading) {
+            <mat-spinner diameter="20"></mat-spinner>
+            Procesando...
+          } @else {
+            <mat-icon>send</mat-icon>
+            Enviar factura
+          }
+        </button>
+      </mat-card-content>
+    </mat-card>
+
+    @if (result) {
+      <mat-card class="result-card">
+        <mat-card-header>
+          <mat-card-title>Resultado del envío</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <dl class="result-dl">
+            <dt>ID factura</dt>
+            <dd>{{ result.invoiceId }}</dd>
+            <dt>Número</dt>
+            <dd>{{ result.invoiceNumber }}</dd>
+            <dt>RUC proveedor</dt>
+            <dd>{{ result.supplierRuc }}</dd>
+            <dt>Estado matching</dt>
+            <dd>
+              <mat-chip [class]="statusChipClass(result.matchResult.status)">
+                {{ statusLabels[result.matchResult.status] }}
+              </mat-chip>
+            </dd>
+            @if (result.erpInvoiceId) {
+              <dt>ID ERP (Odoo)</dt>
+              <dd>{{ result.erpInvoiceId }}</dd>
+            }
+          </dl>
+
+          @if (result.matchResult.discrepancies.length > 0) {
+            <p class="discrepancy-hint">
+              Se encontraron {{ result.matchResult.discrepancies.length }} discrepancia(s).
+            </p>
+          }
+
+          <a
+            mat-stroked-button
+            color="primary"
+            [routerLink]="['/matching', result.invoiceId]"
+          >
+            <mat-icon>visibility</mat-icon>
+            Ver detalle de matching
+          </a>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</div>

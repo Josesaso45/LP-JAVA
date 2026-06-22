@@ -1,0 +1,43 @@
+# --- Secretos y entorno ---
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# --- IDE / editor ---
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Cursor (local) ---
+.cursor/
+
+# --- Backend (Java / Maven) ---
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/*.log
+
+# --- Frontend (Node / Angular) ---
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/coverage/
+frontend/out-tsc/
+frontend/npm-debug.log*
+frontend/yarn-error.log*
+
+# --- Docker ---
+docker-compose.override.yml
+
+# --- Bases de datos locales ---
+*.db
+*.h2.db

@@ -1,0 +1,27 @@
+### Portal Proveedores — pruebas manuales API
+### Base: http://localhost:8080/api/v1
+
+### 1) Facturas abiertas (Tesorería)
+GET http://localhost:8080/api/v1/treasury/open-bills?currencyCode=PEN&dueDateTo=2026-12-31
+
+### 2) Subir factura UBL + OC (ajustar ruta del XML según tu máquina)
+# POST http://localhost:8080/api/v1/invoices/upload
+# Content-Type: multipart/form-data
+# purchaseOrderNumber=PO00001
+# xml=@backend/src/test/resources/fixtures/sample-invoice.xml
+
+### 3) Estado three-way matching
+# GET http://localhost:8080/api/v1/invoices/{submissionId}/match-status
+
+### 4) Generar lote de pago
+# POST http://localhost:8080/api/v1/treasury/batches
+# Content-Type: application/json
+#
+# {
+#   "paymentDate": "2026-06-22",
+#   "currencyCode": "PEN",
+#   "invoiceIds": [123]
+# }
+
+### 5) Descargar TXT BCP
+# GET http://localhost:8080/api/v1/treasury/batches/{batchId}/download

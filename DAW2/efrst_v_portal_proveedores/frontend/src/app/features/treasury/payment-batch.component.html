@@ -1,0 +1,162 @@
+<div class="page-container">
+  <h1 class="page-title">Tesorería — Lotes de pago</h1>
+  <p class="page-subtitle">
+    Seleccione facturas abiertas de proveedores y genere el archivo TXT Telecrédito BCP.
+  </p>
+
+  <mat-card class="filters-card">
+    <mat-card-content>
+      <div class="filters-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de pago</mat-label>
+          <input matInput type="date" [(ngModel)]="paymentDate" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Moneda</mat-label>
+          <mat-select [(ngModel)]="currencyCode">
+            @for (c of currencyOptions; track c) {
+              <mat-option [value]="c">{{ c }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Filtrar por RUC</mat-label>
+          <input matInput [(ngModel)]="supplierRucFilter" placeholder="20100000001" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="loadOpenBills()" [disabled]="loading">
+          <mat-icon>search</mat-icon>
+          Buscar
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  @if (errorMessage) {
+    <p class="error-text">
+      <mat-icon>error_outline</mat-icon>
+      {{ errorMessage }}
+    </p>
+  }
+
+  <mat-card class="table-card">
+    <mat-card-content>
+      @if (loading) {
+        <div class="loading-box">
+          <mat-spinner diameter="40"></mat-spinner>
+          <p>Cando facturas abiertas...</p>
+        </div>
+      } @else if (bills.length === 0) {
+        <div class="empty-state">
+          <mat-icon>inbox</mat-icon>
+          <p>No hay facturas abiertas con los filtros seleccionados.</p>
+        </div>
+      } @else {
+        <table mat-table [dataSource]="bills" class="bills-table">
+          <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox
+                (change)="toggleAllRows()"
+                [checked]="isAllSelected()"
+                [indeterminate]="selection.hasValue() && !isAllSelected()"
+              ></mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let bill">
+              <mat-checkbox
+                (click)="$event.stopPropagation()"
+                (change)="$event ? selection.toggle(bill) : null"
+                [checked]="selection.isSelected(bill)"
+              ></mat-checkbox>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="reference">
+            <th mat-header-cell *matHeaderCellDef>Referencia</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.reference }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="supplierName">
+            <th mat-header-cell *matHeaderCellDef>Proveedores</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.supplierName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="supplierRuc">
+            <th mat-header-cell *matHeaderCellDef>RUC</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.supplierRuc }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="amountDue">
+            <th mat-header-cell *matHeaderCellDef>Monto</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.amountDue | number:'1.2-2' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="currencyCode">
+            <th mat-header-cell *matHeaderCellDef>Moneda</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.currencyCode }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="dueDate">
+            <th mat-header-cell *matHeaderCellDef>Vencimiento</th>
+            <td mat-cell *matCellDef="let bill">{{ bill.dueDate | date:'dd/MM/yyyy' }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      }
+    </mat-card-content>
+  </mat-card>
+
+  @if (bills.length > 0) {
+    <div class="actions-bar">
+      <div class="selection-summary">
+        <strong>{{ selection.selected.length }}</strong> factura(s) seleccionada(s) ·
+        Total: <strong>{{ currencyCode }} {{ selectedTotal() | number:'1.2-2' }}</strong>
+      </div>
+      <button
+        mat-raised-button
+        color="accent"
+        [disabled]="generating || selection.selected.length === 0"
+        (click)="generateBatch()"
+      >
+        @if (generating) {
+          <mat-spinner diameter="20"></mat-spinner>
+          Generando...
+        } @else {
+          <mat-icon>playlist_add</mat-icon>
+          Generar lote
+        }
+      </button>
+    </div>
+  }
+
+  @if (lastBatch) {
+    <mat-card class="result-card">
+      <mat-card-header>
+        <mat-card-title>Lote generado</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <dl class="result-dl">
+          <dt>ID lote</dt>
+          <dd>{{ lastBatch.batchId }}</dd>
+          <dt>Fecha pago</dt>
+          <dd>{{ lastBatch.paymentDate | date:'dd/MM/yyyy' }}</dd>
+          <dt>C origen</dt>
+          <dd>{{ lastBatch.originAccount }}</dd>
+          <dt>Total</dt>
+          <dd>{{ lastBatch.currencyCode }} {{ lastBatch.totalAmount | number:'1.2-2' }}</dd>
+          <dt>Líneas</dt>
+          <dd>{{ lastBatch.lineCount }}</dd>
+          <dt>Archivo</dt>
+          <dd>{{ lastBatch.fileName }}</dd>
+        </dl>
+        <button mat-raised-button color="primary" (click)="downloadBatch()">
+          <mat-icon>download</mat-icon>
+          Descargar TXT BCP
+        </button>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

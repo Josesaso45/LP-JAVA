@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="app-toolbar">
+  <mat-icon class="brand-icon">storefront</mat-icon>
+  <span class="brand-title">Portal de Proveedores</span>
+  <span class="toolbar-spacer"></span>
+  @for (item of navItems; track item.path) {
+    <a
+      mat-button
+      [routerLink]="item.path"
+      routerLinkActive="nav-active"
+      [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </a>
+  }
+</mat-toolbar>
+
+<main class="app-main">
+  <router-outlet />
+</main>
+
+<footer class="app-footer">
+  Integración Odoo · Portal B2B · Perú
+</footer>

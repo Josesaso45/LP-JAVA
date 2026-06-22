@@ -1,0 +1,28 @@
+<div class="page-container">
+  <h1 class="page-title">Bienvenido al Portal de Proveedores</h1>
+  <p class="page-subtitle">
+    Gestiona la carga de facturas electrónicas, validación three-way matching y pagos masivos integrados con Odoo.
+  </p>
+
+  <div class="cards-grid">
+    @for (mod of modules; track mod.title) {
+      <mat-card class="module-card">
+        <mat-card-header>
+          <div class="module-icon" [style.background]="mod.color">
+            <mat-icon>{{ mod.icon }}</mat-icon>
+          </div>
+          <mat-card-title>{{ mod.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ mod.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-raised-button color="primary" [routerLink]="mod.route">
+            Ir al módulo
+            <mat-icon>arrow_forward</mat-icon>
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</div>

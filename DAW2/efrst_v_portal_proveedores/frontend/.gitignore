@@ -1,0 +1,24 @@
+# Dependencies
+/node_modules
+
+# Build
+/dist
+/out-tsc
+/.angular
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
+yarn-error.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+/coverage

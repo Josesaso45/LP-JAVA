@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: portal-proveedores
+  datasource:
+    url: jdbc:h2:mem:portal;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 8080
+
+odoo:
+  url: ${ODOO_URL:https://odoo.example.com}
+  database: ${ODOO_DB:portal_pe}
+  username: ${ODOO_USER:admin}
+  password: ${ODOO_PASSWORD:admin}
+  field-mapping:
+    detraction-code: l10n_pe_detraction_code
+    detraction-percent: l10n_pe_detraction_percent
+    affectation-reason: l10n_pe_edi_affectation_reason
+    document-type: l10n_latam_document_type_id
+
+matching:
+  price-tolerance-percent: 0.01
+
+app:
+  secret-key: ${SECRET_KEY:changeme-dev-only}
+
+treasury:
+  bcp:
+    origin-account: "191-xxxxxxxx-x-xx"
+    company-ruc: "20123456789"
+    company-name: "EMPRESA DEMO SAC"
+    currency-code: PEN
+
+logging:
+  level:
+    pe.portalproveedores: INFO
+    pe.portalproveedores.infrastructure.adapter.out.odoo: DEBUG
